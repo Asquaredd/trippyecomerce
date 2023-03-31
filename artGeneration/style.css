@@ -1,0 +1,49 @@
+/* generate css variables for background gradient */
+
+
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Nanum Gothic Coding', monospace;
+    background: url(background2.gif) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+
+/*i want to scale the logo down.*/
+
+
+.logo {
+	display: block;
+	margin: 0 auto;
+    transform: scale(.5);
+    align-items: center ;
+}
+
+@keyframes rotate {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+.btn {
+    display: block;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+    font-size: 30px;
+    font-family: 'Nanum Gothic Coding', monospace;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    color: green;
+	transform: scale(1.1);
+	transition-delay: 0.3s;
+}

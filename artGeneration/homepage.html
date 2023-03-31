@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ecommerce Landing Page</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Nanum Gothic Coding', monospace;
+            font-size: 18px;
+			background: #f8f8f8;
+		}
+
+		/* Navbar styles */
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			background-color: #333;
+			color: #fff;
+		}
+
+		.navbar img {
+			height: 40px;
+		}
+
+		.navbar ul {
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar li {
+			margin-right: 20px;
+		}
+
+		.navbar a {
+			color: #fff;
+			text-decoration: none;
+		}
+
+		.navbar .fa {
+			margin-right: 10px;
+		}
+
+		/* Slideshow styles */
+		.slideshow {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 500px;
+			background-image: url('path/to/your/slideshow.jpg');
+			background-size: cover;
+			background-position: center;
+			position: relative;
+		}
+
+		.slide {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			opacity: 0;
+			transition: all 1s ease-in-out;
+		}
+
+		.slide.active {
+			opacity: 1;
+		}
+
+		.slide img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		/* Display items styles */
+		.display-items {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		.display-items .item {
+			max-width: 400px;
+			margin-bottom: 40px;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+		}
+
+		.display-items .item img {
+			max-width: 100%;
+			max-height: 100%;
+			margin-bottom: 10px;
+		}
+
+		.display-items .item h3 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+
+		.display-items .item p {
+			margin: 0;
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav class="navbar">
+			<img src="logo1.gif" alt="Your Logo">
+			<ul>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Gallery</a></li>
+				<li><a href="#">Contact</a></li>
+                <li><a href="#"><i class="fa fa-search"></i></a></li>
+				<li><a href="#"><i class="fa fa-user"></i></a></li>
+				<li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+				<li class="hamburger"><a href="#"><i class="fa fa-bars"></i></a></li>
+                <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+
+			</ul>
+		</nav>
+	</header>
+
+	<section class="slideshow">
+		<div class="slide active">
+			<img src="greenmandala.gif" alt="Slide 1">
+		</div>
+		<div class="slide">
+			<img src="background.gif" alt="Slide 2">
+		</div>
+		<div class="slide">
+			<img src="logo.gif" alt="Slide 3">
+		</div>
+	</section>
+
+	<section class="display-items">
+		<div class="item">
+			<img src="giphy (4).gif" alt="Item 1">
+			<h3>Item 1</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula neque a elit faucibus, sit amet consequat elit ultrices.</p>
+		</div>
+		<div class="item">
+			<img src="giphy (3).gif" alt="Item 2">
+			<h3>Item 2</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula neque a elit faucibus, sit amet consequat elit ultrices.</p>
+		</div>
+		<div class="item">
+			<img src="giphy (5).gif" alt="Item 3">
+			<h3>Item 3</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula neque a elit faucibus, sit amet consequat elit ultrices.</p>
+		</div>
+		<div class="item">
+			<img src="giphy (6).gif" alt="Item 4">
+			<h3>Item 4</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula neque a elit faucibus, sit amet consequat elit ultrices.</p>
+		</div>
+	</section>
+
+	<script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+	<script>
+		const slides = document.querySelectorAll('.slide');
+		const hamburger = document.querySelector('.hamburger');
+		const navbar = document.querySelector('.navbar ul');
+		let currentSlide = 0;
+
+		function init() {
+			slides[currentSlide].classList.add('active');
+			setInterval(() => {
+				slides[currentSlide].classList.remove('active');
+				currentSlide++;
+				if (currentSlide === slides.length) {
+					currentSlide = 0;
+				}
+				slides[currentSlide].classList.add('active');
+			}, 5000);
+			hamburger.addEventListener('click', () => {
+				navbar.classList.toggle('show');
+			});
+		}
+
+		init();
+	</script>
+</body>
+</html>
+
+			
